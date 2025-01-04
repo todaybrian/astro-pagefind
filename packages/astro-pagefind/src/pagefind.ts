@@ -55,7 +55,7 @@ export default function pagefind(): AstroIntegration {
           return;
         }
 
-        const { index, errors: createErrors } = await createIndex({});
+        const { index, errors: createErrors } = await createIndex({excludeSelectors:['.gutter']});
         if (!index) {
           logger.error("Pagefind failed to create index");
           createErrors.forEach((e) => logger.error(e));
